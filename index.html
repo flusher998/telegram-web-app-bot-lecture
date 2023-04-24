@@ -389,7 +389,7 @@
 
     const DemoApp = {
         initData: Telegram.WebApp.initData || '',
-        initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
+        initDataUnsafe: Telegram.WebApp.initData || {},
         MainButton: Telegram.WebApp.MainButton,
 
         init(options) {
@@ -533,7 +533,8 @@
         sendTime(spam) {
             const repeat = spam ? 10 : 1;
             for (let i = 0; i < repeat; i++) {
-                Telegram.WebApp.sendData(new Date().toString());
+                const x = new Date();
+                Telegram.WebApp.sendData(x.toString());
             }
         },
 
